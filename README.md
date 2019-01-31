@@ -8,10 +8,14 @@ Hackathon contestants were posed with the task to make an app which an employer 
 
 ## Our Aproach
 
-As a team we all had the most experience with tkinter for creating python backed GUIs, while the library is both limited and dated we made due. We then programed an object oriented model to handle every shift, user, and employee. The following was our workflow:
--   [x]
--   [x]
--   [x]
+As a team we all had the most experience with tkinter for creating python backed GUIs, while the library is both limited and dated we made due. We then programed an object oriented model to handle every shift, user, and employee. Lastly we knew being able to perminatly save data was a must for this project, and while none of us had experience using SQL databases we sere still able to recreate the functionality using JSON documents (which python can easily parse). The following was our workflow:
+- [x] Build shifts model
+- [x] Build users model
+- [x] Link shift objects to user accounts
+- [x] Implement data saving/loading
+- [x] Build the GUI
+- [x] Connect the GUI to the backend using Lambda functions
+- [ ] Add an email account-recovery system
 
 ### login\.py
 
@@ -26,7 +30,7 @@ def CheckLogin(rootA, usernameE, confpwordE):
         error("Invalid Login!")
 ```
 
-Input Validation!
+We methodically implimented input validation and custom responses, as to increase the intuitiveness of the app.
 
 ```python
 def CreateButton(rootB, usernameE, emailE, pwordE, confpwordE):
