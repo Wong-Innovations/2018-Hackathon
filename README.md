@@ -6,8 +6,38 @@
 
 Hackathon contestants were posed with the task to make an app which an employer could use to schedule shifts, save shiftss and minimize resources without impacting revenue.
 
+## Our Aproach
+
+As a team we all had the most experience with tkinter for creating python backed GUIs, while the library is both limited and dated we made due. We then programed an object oriented model to handle every shift, user, and employee. The following was our workflow:
+-   [x]
+-   [x]
+-   [x]
+
 ### login\.py
 
 ```python
+def CheckLogin(rootA, usernameE, confpwordE):
+    with open('data/users.json') as file: # Pulls the JSON dictionary of current users
+        users = json.load(file)
+    if (usernameE.get() in users) and confpwordE.get() == users[usernameE.get()]['password']: # Checks to see if you entered the correct data.
+        rootA.destroy() #Enter the login window below
+        import GUI # We know what bad practice this is but we were desperate
+    else:
+        error("Invalid Login!")
+```
 
+Input Validation!
+
+```python
+def CreateButton(rootB, usernameE, emailE, pwordE, confpwordE):
+    if ((len(usernameE.get()) == 0) or (len(emailE.get()) == 0) or (len(pwordE.get()) == 0) or (len(confpwordE.get())==0)):
+        error("One or more input fields are empty!")
+    elif (pwordE.get() != confpwordE.get()):
+        error("Passwords do not match!")
+    else:
+        obj = User(usernameE.get(), confpwordE.get(), emailE.get(), True)
+        obj.store()
+        user = obj.username
+        rootB.destroy() # Destroys the signup window
+        Login() # Respawns login home
 ```
