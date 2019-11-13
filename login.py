@@ -1,3 +1,5 @@
+# I (Cameron Cobb) also made this file.
+
 from tkinter import *
 import tkinter.messagebox
 import json

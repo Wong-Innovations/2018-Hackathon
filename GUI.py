@@ -1,3 +1,5 @@
+# I (Cameron Cobb) made this file but at the time I didn't know how to use git. 
+
 from tkinter import *
 import tkinter.messagebox
 import math
